@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 15px auto;
+}
+
+.page {
+  margin: 15px auto;
+  padding: 15px;
+  min-height: 600px;
+  box-shadow: 0 0 4px #000000ad !important;
+  border-radius: 2px !important;
+}
+
+@media (max-width: 930px) {
+  .container {
+    max-width: 600px;
+  }
+  .page {
+    min-height: 0;
+    h1 {
+      margin: 0 0 15px 0;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .container {
+    margin: 15px;
+  }
+}

@@ -11,7 +11,7 @@ const InputPassword = (props) => {
 
   const [isShow, changeIsShow] = useState(false);
 
-  const { classIconName, className } = props;
+  const { classIconName, className, onChange, name } = props;
 
   const showPassword = () => {
     changeIsShow(!isShow);
@@ -21,7 +21,9 @@ const InputPassword = (props) => {
   const type = isShow ? 'text' : 'password';
 
   return (<TextField
+    name={name}
     type={type}
+    onChange={onChange}
     className={classnames(className, 'inputPassword')}
     label="Password"
     variant="outlined"

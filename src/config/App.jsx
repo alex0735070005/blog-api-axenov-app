@@ -6,11 +6,8 @@ import Footer from '../components/modules/Footer';
 import '../components/shared/styles.scss';
 
 function App() {
-  const res = { a: 5, c: 10, b: 'hello' };
-
   return (
     <div className="App">
-      {res.b || 'hello'}
       <div className="container">
         <Header />
         <Paper className="page">

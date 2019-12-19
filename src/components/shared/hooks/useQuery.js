@@ -15,16 +15,15 @@ function useQuery(path, redirect) {
           data,
         });
       })
-      .catch(error => {
-
+      .catch((error) => {
         if (redirect) redirect();
 
         setResponse({
           ...responseData,
-          error
+          error,
         });
-      })
-  })
+      });
+  });
 
   return responseData;
 }

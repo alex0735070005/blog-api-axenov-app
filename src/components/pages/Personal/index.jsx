@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
@@ -7,9 +8,8 @@ import useQuery from '../../shared/hooks/useQuery';
 
 import './styles.scss';
 
-const Personal = props => {
-
-  const user = useQuery('/personal', ()=> props.history.push('/login'));
+const Personal = (props) => {
+  const user = useQuery('/personal', () => props.history.push('/login'));
 
   if (!user.data) return null;
   const { apiKey, email, username } = user.data;
@@ -23,19 +23,15 @@ const Personal = props => {
       <Paper className="personal__list">
         <Grid className="personal__row" container alignItems="center" spacing={3}>
           <Grid className="personal__cell" item xs={12} sm={3}>
-          <h2>{username}</h2>
+            <h2>{username}</h2>
           </Grid>
-          <Grid className="personal__cell" item xs={12} sm={9}>
-            
-          </Grid>
+          <Grid className="personal__cell" item xs={12} sm={9} />
         </Grid>
         <Grid className="personal__row" container alignItems="center" spacing={3}>
           <Grid className="personal__cell" item xs={12} sm={3}>
             Email:
           </Grid>
-          <Grid className="personal__cell" item xs={12} sm={9}>
-            {email} is verified
-          </Grid>
+          <Grid className="personal__cell" item xs={12} sm={9}>{email}</Grid>
         </Grid>
         <Grid className="personal__row" container alignItems="center" spacing={3}>
           <Grid className="personal__cell" item xs={12} sm={3}>
@@ -47,7 +43,14 @@ const Personal = props => {
         </Grid>
       </Paper>
     </div>
-  )
+  );
+};
+
+
+Personal.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 export default Personal;

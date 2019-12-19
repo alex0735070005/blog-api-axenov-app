@@ -8,10 +8,9 @@ import Switch from '@material-ui/core/Switch';
 import './styles.scss';
 
 const Navbar = () => {
-
   const [state, setState] = React.useState({ checked: true });
 
-  const handleChange = name => event => {
+  const handleChange = (name) => (event) => {
     setState({ ...state, [name]: event.target.checked });
   };
 
@@ -29,7 +28,7 @@ const Navbar = () => {
         <NavLink className="navbar__link" to="/registration">Registration</NavLink>
         <NavLink className="navbar__link" to="/personal">Personal</NavLink>
         <div className="navbar__loginTrigger">
-        <AccountCircleIcon className="navbar__circle" />
+          <AccountCircleIcon className="navbar__circle" />
           Logout
           <Switch
             checked={state.checked}
@@ -37,11 +36,11 @@ const Navbar = () => {
             value="checked"
             inputProps={{ 'aria-label': 'secondary checkbox' }}
           />
-          
+
         </div>
       </Toolbar>
     </AppBar>
-  )
+  );
 };
 
 export default Navbar;

@@ -18,7 +18,6 @@ import { fetchRegistration } from './helpers';
 import './styles.scss';
 
 const Registration = (props) => {
-
   const [open, setOpen] = React.useState(false);
 
   const handleClose = () => setOpen(false);

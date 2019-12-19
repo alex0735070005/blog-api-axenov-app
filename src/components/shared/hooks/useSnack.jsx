@@ -67,6 +67,7 @@ function SnackContentWrapper(props) {
           <CloseIcon className={classes.icon} />
         </IconButton>,
       ]}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...other}
     />
   );
@@ -77,6 +78,12 @@ SnackContentWrapper.propTypes = {
   message: PropTypes.string,
   onClose: PropTypes.func,
   variant: PropTypes.oneOf(['error', 'info', 'success', 'warning']).isRequired,
+};
+
+SnackContentWrapper.defaultProps = {
+  className: '',
+  message: '',
+  onClose: null,
 };
 
 export default function useSnack({
